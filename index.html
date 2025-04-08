@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Links via WhatsApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-share-alt"></i> QuickShare</h1>
+            <p>Share links directly via WhatsApp with deadlines</p>
+        </header>
+
+        <div class="upload-card">
+            <div class="upload-area" id="uploadArea">
+                <i class="fas fa-link"></i>
+                <p>Paste your link below</p>
+                <input type="url" id="linkInput" class="link-input" placeholder="https://example.com">
+                <div id="linkError" class="error"></div>
+            </div>
+
+            <div class="date-area">
+                <label for="deadlineDate">Deadline:</label>
+                <input type="date" id="deadlineDate" class="date-input">
+            </div>
+
+            <div class="template-area">
+                <label for="messageTemplates">Saved Messages:</label>
+                <div class="template-controls">
+                    <select id="messageTemplates">
+                        <option value="">Select a saved message</option>
+                        <option value="Hello Everyone,\nOur Director Manoj Sir, wants the TCAS ST-VR Sec Project updates">
+                            TCAS Project Update
+                        </option>
+                    </select>
+                    <button id="addTemplateBtn"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="template-actions hidden" id="templateActions">
+                    <button id="editTemplateBtn"><i class="fas fa-edit"></i> Edit</button>
+                    <button id="deleteTemplateBtn"><i class="fas fa-trash"></i> Delete</button>
+                </div>
+            </div>
+
+            <div class="message-area">
+                <div class="message-header">
+                    <label>Custom Message:</label>
+                    <div class="message-actions">
+                        <button id="editMsg"><i class="fas fa-edit"></i></button>
+                        <button id="deleteMsg"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+                <textarea id="customMessage" placeholder="Write your message here..."></textarea>
+                <div class="char-count"><span id="charCount">0</span>/1000</div>
+            </div>
+
+            <button class="whatsapp-btn" id="shareBtn">
+                <i class="fab fa-whatsapp"></i> Share via WhatsApp
+            </button>
+        </div>
+
+        <div class="preview-section hidden" id="previewSection">
+            <h3>Preview:</h3>
+            <div class="preview-content" id="previewContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
